@@ -37,7 +37,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
   
   const tryInitializeFirebase = useCallback(async () => {
       const result = initializeFirebase();
-      // FIX: Restructure conditional to properly narrow the discriminated union type.
+      // FIX: Restructured conditional to properly narrow the discriminated union type.
       if (!result.isInitialized) {
           console.warn(result.error);
           setAuthService(null);
@@ -47,7 +47,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
           setLoggedInProfessional(null);
           return false;
       }
-      
+
       setAuthService(result.services.auth);
       setIsFirebaseAvailable(true);
       return true;

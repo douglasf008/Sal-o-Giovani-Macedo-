@@ -16,6 +16,7 @@ import DocumentTextIcon from '../components/icons/DocumentTextIcon';
 import PencilIcon from '../components/icons/PencilIcon';
 import BookOpenIcon from '../components/icons/BookOpenIcon';
 import TagIcon from '../components/icons/TagIcon';
+import ArchiveBoxIcon from '../components/icons/ArchiveBoxIcon';
 
 
 // Tab Components
@@ -33,9 +34,10 @@ import GeneralRegistrations from '../components/management/GeneralRegistrations'
 import AppManual from '../components/management/AppManual';
 import SalonDocuments from '../components/management/SalonDocuments';
 import ServicePricingCalculator from '../components/management/ServicePricingCalculator';
+import SalesHistory from '../components/management/SalesHistory';
 
 
-type Tab = 'dashboard' | 'registrations' | 'cycles' | 'daily' | 'yearly' | 'treatments' | 'vales' | 'cardFees' | 'expenses' | 'coloring' | 'manual' | 'documentos' | 'pricing';
+type Tab = 'dashboard' | 'registrations' | 'cycles' | 'daily' | 'yearly' | 'treatments' | 'vales' | 'cardFees' | 'expenses' | 'coloring' | 'manual' | 'documentos' | 'pricing' | 'salesHistory';
 
 const AdminManagementScreen: React.FC = () => {
     const navigate = useNavigate();
@@ -54,6 +56,7 @@ const AdminManagementScreen: React.FC = () => {
     const tabs: { id: Tab; label: string; icon: React.ReactNode }[] = [
         { id: 'dashboard', label: 'Dashboard', icon: <DashboardIcon className="w-5 h-5" /> },
         { id: 'registrations', label: 'Cadastros', icon: <PencilIcon className="w-5 h-5" /> },
+        { id: 'salesHistory', label: 'Histórico de Vendas', icon: <ArchiveBoxIcon className="w-5 h-5" /> },
         { id: 'cycles', label: 'Ciclos de Pagamento', icon: <CalendarIcon className="w-5 h-5" /> },
         { id: 'daily', label: 'Desempenho Diário', icon: <ArrowTrendingUpIcon className="w-5 h-5" /> },
         { id: 'yearly', label: 'Comparativo Anual', icon: <ChartIcon className="w-5 h-5" /> },
@@ -71,6 +74,7 @@ const AdminManagementScreen: React.FC = () => {
         switch (activeTab) {
             case 'dashboard': return <ManagementDashboard />;
             case 'registrations': return <GeneralRegistrations />;
+            case 'salesHistory': return <SalesHistory />;
             case 'cycles': return <PaymentCycles />;
             case 'daily': return <DailyPerformance />;
             case 'yearly': return <MonthlyYearlyComparison />;
