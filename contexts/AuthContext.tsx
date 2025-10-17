@@ -47,7 +47,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
           setLoggedInProfessional(null);
           return false;
       }
-
+      
       setAuthService(result.services.auth);
       setIsFirebaseAvailable(true);
       return true;

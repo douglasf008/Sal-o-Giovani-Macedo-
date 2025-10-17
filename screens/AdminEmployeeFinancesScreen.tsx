@@ -1,21 +1,22 @@
+
 import React, { useState, useMemo, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { useProfessionals } from '../../contexts/ProfessionalsContext';
-import { useSalesHistory } from '../../contexts/SalesHistoryContext';
-import { useVales } from '../../contexts/ValesContext';
-import { usePaymentCycle } from '../../hooks/usePaymentCycle';
-import ArrowLeftIcon from '../../components/icons/ArrowLeftIcon';
-import ChevronLeftIcon from '../../components/icons/ChevronLeftIcon';
-import ChevronRightIcon from '../../components/icons/ChevronRightIcon';
-import ArrowTrendingUpIcon from '../../components/icons/ArrowTrendingUpIcon';
-import ArrowTrendingDownIcon from '../../components/icons/ArrowTrendingDownIcon';
-import CurrencyDollarIcon from '../../components/icons/CurrencyDollarIcon';
-import ReceiptPercentIcon from '../../components/icons/ReceiptPercentIcon';
-import { ProcessedCartItem, Professional } from '../../types';
-import { useAuth } from '../../contexts/AuthContext';
-import { useFinancials } from '../../contexts/FinancialsContext';
-import PayslipModal from '../../components/PayslipModal';
-import DocumentTextIcon from '../../components/icons/DocumentTextIcon';
+import { useProfessionals } from '../contexts/ProfessionalsContext';
+import { useSalesHistory } from '../contexts/SalesHistoryContext';
+import { useVales } from '../contexts/ValesContext';
+import { usePaymentCycle } from '../hooks/usePaymentCycle';
+import ArrowLeftIcon from '../components/icons/ArrowLeftIcon';
+import ChevronLeftIcon from '../components/icons/ChevronLeftIcon';
+import ChevronRightIcon from '../components/icons/ChevronRightIcon';
+import ArrowTrendingUpIcon from '../components/icons/ArrowTrendingUpIcon';
+import ArrowTrendingDownIcon from '../components/icons/ArrowTrendingDownIcon';
+import CurrencyDollarIcon from '../components/icons/CurrencyDollarIcon';
+import ReceiptPercentIcon from '../components/icons/ReceiptPercentIcon';
+import { ProcessedCartItem, Professional } from '../types';
+import { useAuth } from '../contexts/AuthContext';
+import { useFinancials } from '../contexts/FinancialsContext';
+import PayslipModal from '../components/PayslipModal';
+import DocumentTextIcon from '../components/icons/DocumentTextIcon';
 
 const AdminEmployeeFinancesScreen: React.FC = () => {
     const { employeeId } = useParams<{ employeeId: string }>();
